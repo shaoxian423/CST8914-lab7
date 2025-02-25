@@ -211,101 +211,113 @@
       </head>
 
       <body>
-  <header>
-
-    <div class="container">
-      <h1 class="logo">The Funion</h1>
-      
-      <!-- Navigation menu -->
-      <nav class="menu">
-        <a href="#">Home</a>
-        <a href="#">Politics</a>
-        <a href="#">Business</a> <!-- Removed tabindex="-1" to allow tab focus -->
-        <a href="#">Entertainment</a>
-        <a href="#">Sports</a>
-        <a href="#" class="btn-search pull-right">
-          <img src="https://raw.githubusercontent.com/udacity/ud891/2de2a0688c68809a3b453db3a24b1a59e8401459/lesson2-focus/02-dom-order/images/search.svg" alt="Search" />
-          Search
-        </a>
-      </nav>
-    </div>
-  </header>
-
-  <div class="newsletter">
-    <div class="container">
-      <h3>Like the Funion? Consider joining our newsletter!</h3>
-      <input type="text">
-      <button type="button" onfocus="getFocus()">Sign up</button>
-    </div>
-  </div>
-  
-  <main class="container">
-    <h2 class="offscreen">Top story</h2>
-    <article class="main-story">
-      <img class="pull-right" src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/cat.jpg?raw=true" alt="A cat staring menacingly off into space">
-      <div class="info">
-        <h3 class="headline">Study shows 9 out of 10 cats quietly judging their owners as they sleep</h3>
-        <p>
-          GRAND RAPIDS, MI — Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#">Read More</a>
-        </p>
-      </div>
-    </article>
-
-    <div class="side-by-side">
-      <div class="column">
-        <div class="tier-header">
-          <h2 tabindex="0">In the news</h2>
+        <header>
+          <div class="container">
+            <h1 class="logo">The Funion</h1>
+        
+            <!-- Navigation menu - Ensuring correct tab order -->
+            <nav class="menu">
+              <a href="#">Home</a>
+              <a href="#">Politics</a>
+              <a href="#">Business</a>
+              <a href="#">Entertainment</a>
+              <a href="#">Sports</a>
+              <a href="#" class="btn-search pull-right">
+                <img src="https://raw.githubusercontent.com/udacity/ud891/2de2a0688c68809a3b453db3a24b1a59e8401459/lesson2-focus/02-dom-order/images/search.svg" alt="Search" />
+                Search
+              </a>
+            </nav>
+          </div>
+        </header>
+        
+        <main class="container">
+          <h2 class="offscreen">Top story</h2>
+        
+          <!-- Main Story - Ensuring proper tab order -->
+          <article class="main-story" tabindex="0">
+            <img class="pull-right"
+                 src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/cat.jpg?raw=true"
+                 alt="A cat staring menacingly off into space">
+            <div class="info">
+              <h3 class="headline">Study shows 9 out of 10 cats quietly judging their owners as they sleep</h3>
+              <p>
+                GRAND RAPIDS, MI — Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                <a href="#" tabindex="0">Read More</a> <!-- Ensure tab order -->
+              </p>
+            </div>
+          </article>
+        
+          <div class="side-by-side">
+            <div class="column">
+              <div class="tier-header">
+                <h2 tabindex="0">In the news</h2>
+              </div>
+              <article>
+                <h3 class="headline">Bee wonders if maybe everyone else is a drone and he's the only one who has it "figured out."</h3>
+                <p><a href="#" tabindex="0"><b>Read More</b></a></p>
+                <img src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/bee.jpg?raw=true" alt="A bee on top of a flower" />
+              </article>
+            </div>
+            <div class="column">
+              <article>
+                <img src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/telephone.jpg?raw=true"
+                     alt="A red, London telephone booth">
+                <div class="info">
+                  <h3 class="headline">Telephone booths. How is this still a thing?</h3>
+                  <p>
+                    LONDON — Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    <a href="#" tabindex="0">Read More</a>
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        
+          <div class="three-col">
+            <div class="tier-header">
+              <h2>Recommended</h2>
+            </div>
+            <div class="columns">
+              <article>
+                <img src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/dog.jpg?raw=true"
+                     alt="A dog at a desk looks up at a laptop and mouse">
+                <div class="info">
+                  <h3 class="headline">Turn man's best friend into man's best personal assistant.
+                    <a href="#" tabindex="0">Read More</a></h3>
+                </div>
+              </article>
+              <article>
+                <img src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/coffee.jpg?raw=true"
+                     alt="A cup of coffee on a table">
+                <div class="info">
+                  <h3 class="headline">San Franciscans are losing their minds over this coffee.
+                    <a href="#" tabindex="0">Read More</a></h3>
+                </div>
+              </article>
+              <article>
+                <img src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/football.jpg?raw=true"
+                     alt="A football player hands the ball off to another player">
+                <div class="info">
+                  <h3 class="headline">Sportsball team scores to win the big race.
+                    <a href="#" tabindex="0">Read More</a></h3>
+                </div>
+              </article>
+            </div>
+          </div>
+        </main>
+        
+        <div class="newsletter">
+          <div class="container">
+            <h3>Like the Funion? Consider joining our newsletter!</h3>
+            <input type="text">
+            <button type="button" tabindex="0">Sign up</button> <!-- Fix tab order -->
+          </div>
         </div>
-        <article>
-          <h3 class="headline">Bee wonders if maybe everyone else is a drone and he's the only one who has it "figured out."</h3>
-          <p><a href="#" tabindex="1"><b>Read More</b></a></p>
-          <img src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/bee.jpg?raw=true" alt="A bee on top of a flower" />
-        </article>
-      </div>
-      <div class="column">
-        <article>
-          <img src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/telephone.jpg?raw=true" alt="A red, London telephone booth" />
-          <div class="info">
-            <h3 class="headline">Telephone booths. How is this still a thing?</h3>
-            <p>
-              LONDON — Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#">Read More</a>
-            </p>
-          </div>
-        </article>
-      </div>
-    </div>
-
-    <div class="three-col">
-      <div class="tier-header">
-        <h2>Recommended</h2>
-      </div>
-      <div class="columns">
-        <article>
-          <img src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/dog.jpg?raw=true" alt="A dog at a desk looks up at a laptop and mouse" />
-          <div class="info">
-            <h3 class="headline">Turn man's best friend into man's best personal assistant. <a href="#">Read More</a></h3>
-          </div>
-        </article>
-        <article>
-          <img src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/coffee.jpg?raw=true" alt="A cup of coffee on a table" />
-          <div class="info">
-            <h3 class="headline">San Franciscans are losing their minds over this coffee. <a href="#">Read More</a></h3>
-          </div>
-        </article>
-        <article>
-          <img src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/football.jpg?raw=true" alt="A football player hands the ball off to another player" />
-          <div class="info">
-            <h3 class="headline">Sportsball team scores to win the big race. <a href="#">Read More</a></h3>
-          </div>
-        </article>
-      </div>
-    </div>
-  </main>
 
   <script>
     function getFocus() {
-      window.open('https://aidaform.com/templates/thank-you-page-with-redirects.html','mywindow').focus()
-    }
+      // window.open('https://aidaform.com/templates/thank-you-page-with-redirects.html','mywindow').focus()
+      document.querySelector(".newsletter input").focus();//focus on the input field}
   </script>
 </body>
 
